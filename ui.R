@@ -6,6 +6,7 @@ air_df <- read.csv("PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors 
 intro_tab <- tabPanel(
   "Introduction",
   fluidPage(
+    h1("PM2.5 Global Air Pollution 2010-2017"),
     p("write intro here")
   )
 )
