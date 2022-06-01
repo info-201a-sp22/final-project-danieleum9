@@ -6,7 +6,7 @@ air_df <- read.csv("PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors 
 intro_tab <- tabPanel(
   "Introduction",
   fluidPage(
-    p("")
+    p("write intro here")
   )
 )
 
@@ -24,6 +24,14 @@ main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "plot1")
 )
 
+conclusion_tab <- tabPanel(
+  "Conclusion",
+  fluidPage(
+    h2("Conclusion"),
+    p("write conclusion here")
+  )
+)
+
 first_tab <- tabPanel(
   "Countries PM 2.5 Chart",
   sidebarLayout(
@@ -36,5 +44,6 @@ first_tab <- tabPanel(
 ui <- navbarPage(
   "Global PM 2.5 Exposure",
   intro_tab,
-  first_tab
+  first_tab,
+  conclusion_tab
 )
