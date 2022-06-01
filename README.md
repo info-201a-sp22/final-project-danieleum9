@@ -3,7 +3,7 @@
 
 Authors: Daniel Eum, Finn Chenevert, Li-Yu Hsu, Daniel Martinez, Rupali Ramalingam
 
-Link: https://danieleum.shinyapps.io/final-project-danieleum9/
+Link: https://danieleum.shinyapps.io/global-air-quality/
 
 Please create the necessary files for your multi-page Shiny app in this GitHub repository. Consult the Canvas assignment for more details. Be sure to publish your app on Shinyapps.io.
 
