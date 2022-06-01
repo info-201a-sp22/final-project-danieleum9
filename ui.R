@@ -39,8 +39,9 @@ sidebar_panel_widget2 <- sidebarPanel(
 
 sidebar_panel_widget3 <- sidebarPanel(
   radioButtons("radio", label = h3("Checkbox group"), 
-               choices = list("2010" = 2010, "2011" = 2011, "2012" = 2012, "2013" = 2013, "2014" = 2014, "2015" = 2015, "2016" = 2016, "2017" = 2017),
-               selected = "2017")
+               choices = list("2010" = "2010", "2011" = "2011", "2012" = "2012",
+                               "2013" = "2013", "2014" = "2014", "2015" = "2015",
+                               "2016" = "2016", "2017" = "2017"), selected = "2010")
 )
 
 main_panel_plot <- mainPanel(

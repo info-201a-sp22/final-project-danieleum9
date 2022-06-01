@@ -7,15 +7,16 @@ library(stringr)
 
 air_df <- read.csv("PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors = FALSE)
 
+edit_df <- air_df %>% 
+  pivot_longer(!c(Country.Name, Country.Code), 
+               names_to = "Year",
+               values_to = "PM2.5")
+
+edit_df$Year <- gsub("X","",as.character(edit_df$Year))
+
 server <- function(input, output) {
   
   output$plot1 <- renderPlotly({
-    
-    edit_df <- air_df %>% 
-      pivot_longer(!c(Country.Name, Country.Code), 
-                   names_to = "Year",
-                   values_to = "PM2.5")
-    
     
     
     filtered_df <- edit_df %>% 
@@ -36,6 +37,13 @@ server <- function(input, output) {
   })
   
   output$plot2 <- renderPlotly({ 
+    
+    edit_df <- air_df %>% 
+      pivot_longer(!c(Country.Name, Country.Code), 
+                   names_to = "Year",
+                   values_to = "PM2.5")
+    
+    edit_df$Year <- gsub("X","",as.character(edit_df$Year))
     
     air_map <- edit_df %>% 
       filter(Year %in% input$Year_selection) %>% 
@@ -84,7 +92,7 @@ server <- function(input, output) {
   output$plot3 <- renderPlotly({
     
     filtered_df2 <- edit_df %>% 
-      filter(Country.Name == "Nepal" | Country.Name == "Finland" | Country.Name == "United States")
+      filter(Country.Name == "Nepal" | Country.Name == "Finland" | Country.Name == "United States") %>% 
       filter(Year == input$radio)
     
     year_plot <- ggplot(data = filtered_df2) +
