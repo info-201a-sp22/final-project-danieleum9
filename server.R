@@ -16,7 +16,7 @@ server <- function(input, output) {
                    names_to = "Year",
                    values_to = "PM2.5")
     
-    edit_df$Year <- gsub("X","",as.character(edit_df$Year))
+    
     
     filtered_df <- edit_df %>% 
       filter(Country.Name %in% input$user_selection)
@@ -85,7 +85,7 @@ server <- function(input, output) {
     
     filtered_df2 <- edit_df %>% 
       filter(Country.Name == "Nepal" | Country.Name == "Finland" | Country.Name == "United States")
-      filter(Year %in% input$checkGroup)
+      filter(Year == input$radio)
     
     year_plot <- ggplot(data = filtered_df2) +
       geom_col(mapping = aes(x = Country.Name, y = PM2.5, fill = Country.Name, text = PM2.5)) + labs(

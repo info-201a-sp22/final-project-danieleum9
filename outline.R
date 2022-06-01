@@ -102,3 +102,15 @@ sidebar_panel_widget2 <- sidebarPanel(
         main_panel_plot2
       )
     )
+    
+    radioButtons("radio", label = h3("Checkbox group"), 
+                 choices = list("X2010" = 2010, "X2011" = 2011, "X2012" = 2012, "X2013" = 2013, "X2014" = 2014, "X2015" = 2015, "X2016" = 2016, "X2017" = 2017),
+                 selected = "X2017"),
+  )
+  
+  checkboxGroupInput("radio", label = h3("Checkbox group"), 
+                     choices = list("2010" = 2010, "2011" = 2011, "2012" = 2012, "2013" = 2013, "2014" = 2014, "2015" = 2015, "2016" = 2016, "2017" = 2017),
+                     selected = "2017"),
+  
+  edit_df$Year <- gsub("X","",as.character(edit_df$Year))
+  

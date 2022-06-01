@@ -10,11 +10,11 @@ server <- function(input, output) {
     
     year_selected <- input$Year_selection
     
-    filtered_df <- air_df %>% 
-      filter(year_selected == max(year_selected))
+    filtered_df <- edit_df %>% 
+      filter(Year == input$Year_selection)
     
     PM2.5_plot <- ggplot(data = filtered_df) +
-      geom_bar(mapping = aes(x = ï..Country.Name, y = year_selected, fill = ï..Country.Name)) +
+      geom_col(mapping = aes(x = ï..Country.Name, y = Year, fill = ï..Country.Name)) +
       labs(
         title = "3 Countries With Highest PM2.5 In Year Selected",
         xlab = "Country picked",
@@ -22,7 +22,7 @@ server <- function(input, output) {
         colour = "Country color code"
       )
     
-    return(PM2.5_plot)
+    ggplotly(PM2.5_plot)
     
   })
   
