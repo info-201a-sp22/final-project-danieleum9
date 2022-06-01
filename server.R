@@ -3,6 +3,8 @@ library(plotly)
 library(dplyr)
 library("tidyverse")
 library(choroplethrMaps)
+library(choroplethr)
+
 
 data(country.map, package = "choroplethrMaps")
 
