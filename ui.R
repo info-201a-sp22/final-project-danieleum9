@@ -6,7 +6,8 @@ air_df <- read.csv("PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors 
 intro_tab <- tabPanel(
   "Introduction",
   fluidPage(
-    h1("PM2.5 Global Air Pollution 2010-2017"),
+    h1("PM2.5 Global Air Pollution 2010-2017", align = "center"),
+    em(h2("Introduction")),
     p("write intro here")
   )
 )
@@ -28,7 +29,7 @@ main_panel_plot <- mainPanel(
 conclusion_tab <- tabPanel(
   "Conclusion",
   fluidPage(
-    h2("Conclusion"),
+    em(h2("Conclusion")),
     p("write conclusion here")
   )
 )
