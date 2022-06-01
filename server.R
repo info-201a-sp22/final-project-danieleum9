@@ -18,7 +18,8 @@ server <- function(input, output) {
       filter(Country.Name %in% input$user_selection)
     
     air_plot1 <- ggplot(data = filtered_df) +
-      geom_col(mapping = aes(x = Year, y = PM2.5, fill = Country.Name)) + labs(
+      geom_col(mapping = aes(x = Year, y = PM2.5, fill = Country.Name,
+                             text = PM2.5)) + labs(
         title = "Annual Mean PM2.5 Exposure in Each Country 2010 - 2017",
         x = "Year",
         y = "Mean PM2.5 Exposure (Micrograms per Cubic Meter)",
@@ -26,7 +27,7 @@ server <- function(input, output) {
       )
       
     
-    ggplotly(air_plot1)
+    ggplotly(air_plot1, tooltip = "text")
     
   })
 }

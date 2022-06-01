@@ -1,0 +1,14 @@
+name: final-project-danieleum9
+title: final-project-danieleum9
+username:
+account: danieleum
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6407132
+bundleId: 5965691
+url: https://danieleum.shinyapps.io/final-project-danieleum9/
+when: 1654041313.40056
+lastSyncTime: 1654041313.40058
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|outline.R|PM2.5_Global_Air_Pollution_2010-2017.csv

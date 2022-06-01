@@ -24,8 +24,8 @@ main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "plot1")
 )
 
-climate_tab <- tabPanel(
-  "PM 2.5",
+first_tab <- tabPanel(
+  "Countries PM 2.5 Chart",
   sidebarLayout(
     sidebar_panel_widget,
     main_panel_plot
@@ -34,7 +34,7 @@ climate_tab <- tabPanel(
 
 
 ui <- navbarPage(
-  "PM2.5 Levels",
+  "Global PM 2.5 Exposure",
   intro_tab,
-  climate_tab
+  first_tab
 )
