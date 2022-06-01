@@ -2,12 +2,14 @@ library(ggplot2)
 library(plotly)
 library(dplyr)
 library("tidyverse")
+library(stringr)
 
 air_df <- read.csv("PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors = FALSE)
 
 server <- function(input, output) {
   
   output$plot1 <- renderPlotly({
+    
 
     edit_df <- air_df %>% 
       pivot_longer(!c(Country.Name, Country.Code), 
