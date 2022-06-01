@@ -38,8 +38,8 @@ server <- function(input, output) {
   })
   output$plot2 <- renderPlotly({ 
     
-    choropleth_data_df <- Pollution_df %>% 
-      pivot_longer(!c(`Country Name`, `Country Code`), 
+    choropleth_data_df <- air_df %>% 
+      pivot_longer(!c(Country.Name, Country.Code), 
                    names_to = "Year",
                    values_to = "PM2.5")
     
@@ -84,7 +84,8 @@ server <- function(input, output) {
     choropleth_air<- country_choropleth(air_map) +
       labs(title = "Annual Mean PM2.5 Exposure in Each Country Map 2010 - 2017")
     
-    ggplotly(choropleth_air)
+    ggplotly(choropleth_air, 
+             tooltip = c("x", "y"))
     
   })
 }
