@@ -31,10 +31,11 @@ sidebar_panel_widget2 <- sidebarPanel(
   selectInput(
     inputId = "Year_selection",
     label = "YOUR CODE HERE",
-    choices = choropleth_data_df$Year,
+    choices = edit_df$Year,
     multiple = FALSE
   )
 )
+
 
 sidebar_panel_widget3 <- sidebarPanel(
   checkboxGroupInput("checkGroup", label = h3("Checkbox group"), 
@@ -77,6 +78,7 @@ third_tab <- tabPanel(
     main_panel_plot2
   )
 )
+
 
 second_tab <- tabPanel(
   "Finland, Nepal, and U.S.",

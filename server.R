@@ -2,15 +2,8 @@ library(ggplot2)
 library(plotly)
 library(dplyr)
 library("tidyverse")
-<<<<<<< HEAD
+library(usmap)
 library(stringr)
-=======
-library(choroplethrMaps)
-library(choroplethr)
-
-data(country.map, package = "choroplethrMaps")
-
->>>>>>> 557329d1de128451d12efa98aba0f94d34315db2
 
 air_df <- read.csv("PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors = FALSE)
 
@@ -41,19 +34,12 @@ server <- function(input, output) {
     ggplotly(air_plot1, tooltip = "text")
     
   })
+  
   output$plot2 <- renderPlotly({ 
     
-    choropleth_data_df <- air_df %>% 
-      pivot_longer(!c(Country.Name, Country.Code), 
-                   names_to = "Year",
-                   values_to = "PM2.5")
-    
-    filtered_map <- choropleth_data_df %>% 
-      filter(Year %in% input$user_selection)
-    
-    air_map <- choropleth_data_df %>% 
+    air_map <- edit_df %>% 
       filter(Year %in% input$Year_selection) %>% 
-      rename(region = `Country Name`, value = PM2.5) %>% 
+      rename(region = `Country.Name`, value = PM2.5) %>% 
       mutate(region = tolower(region)) %>% 
       mutate(region = recode(
         region,
@@ -84,7 +70,7 @@ server <- function(input, output) {
         "egypt, arab rep."          = "egypt", 
         "kyrgyz republic"           = "kyrgyzstan",
         "eswatini"                  = "swaziland")) 
-
+    
     
     choropleth_air <- country_choropleth(air_map) +
       labs(title = "Annual Mean PM2.5 Exposure in Each Country Map 2010 - 2017")
@@ -93,7 +79,7 @@ server <- function(input, output) {
              tooltip = c("x", "y"))
     
   })
-}
+
 
   output$plot3 <- renderPlotly({
     
@@ -112,4 +98,5 @@ server <- function(input, output) {
     ggplotly(year_plot, tooltip = "text")
     
   })
+}
 
