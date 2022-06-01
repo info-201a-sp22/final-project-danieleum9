@@ -27,15 +27,27 @@ sidebar_panel_widget <- sidebarPanel(
   )
 )
 
+sidebar_panel_widget2 <- sidebarPanel(
+  selectInput(
+    inputId = "Year_selection",
+    label = "YOUR CODE HERE",
+    choices = choropleth_data_df$Year,
+    multiple = FALSE
+  )
+)
 
 main_panel_plot <- mainPanel(
   plotlyOutput(outputId = "plot1")
 )
 
+main_panel_plot2 <- mainPanel(
+  plotlyOutput(outputId = "plot2")
+)
+
 conclusion_tab <- tabPanel(
   "Conclusion",
   fluidPage(
-    h2("Conclusion"),
+    em(h2("Conclusion")),
     p("write conclusion here")
   )
 )
@@ -48,10 +60,18 @@ first_tab <- tabPanel(
   )
 )
 
+second_tab <- tabPanel(
+  "Countries PM 2.5 Choropleth", 
+  sidebarLayout(
+    sidebar_panel_widget2, 
+    main_panel_plot2
+  )
+)
 
 ui <- navbarPage(
   "Global PM 2.5 Exposure",
   intro_tab,
   first_tab,
+  second_tab,
   conclusion_tab
 )
