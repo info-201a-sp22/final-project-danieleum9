@@ -63,7 +63,10 @@ conclusion_tab <- tabPanel(
   "Conclusion",
   fluidPage(
     em(h2("Conclusion")),
-    p("write conclusion here")
+    p("Over the past decade, the pattern of air pollution change, as indicated by The Annual Mean World PM.2 chart shows minute changes worldwide. It also proves to show how most of the air pollution is concentrated in North Africa and Asia, with numbers increasing in countries within Africa. According to calculations, Nepal had the highest air pollution compared to any other country, with its highest being in 2010 with a PM.2 reaching 100.78 micrograms per cubic meter as shown by the Annual Mean PM.2 Exposure in Each Country bar graph. Finland, on the other hand, had one of the least amounts of air pollution reaching an all-time low of 5.86 micrograms per cubic meter of air pollution in 2017 as shown by the Annual Mean PM.2 Exposure in Each Country bar graph."), 
+
+p("From this analysis, it can be seen that while there is concern regarding the state of air pollution around the world, the data provides hope for the amelioration of air quality. There as only been minute changes in air quality overall, meaning that there aren’t any drastic changes that are out of control. Additionally, Nepal, India, and China, countries with some of the highest air pollutants in the world, have had consistently decreasing numbers over the past decade. The broader implication of this insight is that current practices are clearly improving air quality and if these practices continue, so can the trend of better air quality. However, there are countries with increasing air pollution, as discussed before, and if proper attention is brought to this concerning issue, then new practices can be adopted in those regions to ameliorate air quality. This data can therefore be used for the adoption of better practices. 
+")
   )
 )
 
