@@ -90,11 +90,11 @@ second_tab <- tabPanel(
     sidebar_panel_widget3,
     main_panel_plot3
   ),
-  em("The reasoning as to why these three countries were chosen was to compare the countries with the highest exposure of PM2.5 in 2017--as Nepal had the highest PM2.5 exposure in 2017 and Finland had the lowest PM2.5 exposure in 2017. The United States was also incorporated into the chart to help visualize where one of most advanced country sits in terms of PM2.5 levels compared to Nepal and Finland.", align = "center")
+  em("The reasoning as to why these three countries were chosen was to compare the countries with the highest and the lowest exposures of PM2.5 in 2017--as Nepal had the highest PM2.5 exposure in 2017 and Finland had the lowest PM2.5 exposure in 2017. The United States was also incorporated into the chart to help visualize where one of most advanced country sits in terms of PM2.5 levels compared to Nepal and Finland.", align = "center")
 )
 
 ui <- navbarPage(
-  "Global PM 2.5 Exposure",
+  strong(em("Global PM 2.5 Exposure")),
   intro_tab,
   first_tab,
   second_tab,
