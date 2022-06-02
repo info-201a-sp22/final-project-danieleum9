@@ -72,7 +72,8 @@ first_tab <- tabPanel(
   sidebarLayout(
     sidebar_panel_widget,
     main_panel_plot
-  )
+  ),
+  em("This chart was added to help visualize how the PM2.5 exposures in micrograms per cubic meter changed throughout the years for every country. Through this chart, we are able to understand if countries were able to improve or degrade their air quality from 2010 - 2017.", align = "center")
 )
 
 third_tab <- tabPanel(
@@ -80,7 +81,8 @@ third_tab <- tabPanel(
   sidebarLayout(
     sidebar_panel_widget2, 
     main_panel_plot2
-  )
+  ),
+  em("This choropleth map was added to help visualize the distribution of PM2.5 exposures in micrograms per cubic meter throughout the whole world. Through this visualization, we are able to see in which places in the world have a more concentrated amount of PM2.5.", align = "center")
 )
 
 
