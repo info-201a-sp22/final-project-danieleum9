@@ -5,9 +5,10 @@ account: danieleum
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6414282
-bundleId: 5969314
+bundleId: 5972410
 url: https://danieleum.shinyapps.io/global-air-quality/
-when: 1654118626.50759
-lastSyncTime: 1654118626.50761
+when: 1654194556.25628
+lastSyncTime: 1654194556.25629
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: Finn Working on Group Project/app.R|Finn Working on Group Project/PM2.5_Global_Air_Pollution_2010-2017.csv|Finn Working on Group Project/server.R|Finn Working on Group Project/ui.R|my_style.scss|outline.R

@@ -114,3 +114,5 @@ sidebar_panel_widget2 <- sidebarPanel(
   
   edit_df$Year <- gsub("X","",as.character(edit_df$Year))
   
+  edit_df$Year <- gsub("X","",as.character(edit_df$Year))
+  

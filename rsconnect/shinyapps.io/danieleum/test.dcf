@@ -1,0 +1,14 @@
+name: test
+title: test
+username:
+account: danieleum
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6417023
+bundleId: 5970583
+url: https://danieleum.shinyapps.io/test/
+when: 1654152309.72274
+lastSyncTime: 1654152309.72277
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData|Finn Working on Group Project/app.R|Finn Working on Group Project/PM2.5_Global_Air_Pollution_2010-2017.csv|Finn Working on Group Project/server.R|Finn Working on Group Project/ui.R|my_style.scss|outline.R|PM2.5_Global_Air_Pollution_2010-2017.csv

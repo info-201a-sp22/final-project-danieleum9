@@ -4,8 +4,11 @@ library(dplyr)
 library("tidyverse")
 library(usmap)
 library(stringr)
+library(choroplethrMaps)
+library(choroplethr)
+library(rgdal)
 
-air_df <- read.csv("PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors = FALSE)
+air_df <- read.csv("https://raw.githubusercontent.com/info-201a-sp22/final-project-danieleum9/main/PM2.5_Global_Air_Pollution_2010-2017.csv", stringsAsFactors = FALSE)
 
 edit_df <- air_df %>% 
   pivot_longer(!c(Country.Name, Country.Code), 
@@ -14,10 +17,10 @@ edit_df <- air_df %>%
 
 edit_df$Year <- gsub("X","",as.character(edit_df$Year))
 
+
 server <- function(input, output) {
   
   output$plot1 <- renderPlotly({
-    
     
     filtered_df <- edit_df %>% 
       filter(Country.Name %in% input$user_selection)
@@ -90,6 +93,14 @@ server <- function(input, output) {
 
 
   output$plot3 <- renderPlotly({
+    
+    edit_df <- air_df %>% 
+      pivot_longer(!c(Country.Name, Country.Code), 
+                   names_to = "Year",
+                   values_to = "PM2.5")
+    
+    edit_df$Year <- gsub("X","",as.character(edit_df$Year))
+    
     
     filtered_df2 <- edit_df %>% 
       filter(Country.Name == "Nepal" | Country.Name == "Finland" | Country.Name == "United States") %>% 
